@@ -11,7 +11,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Header } from "./components/Header";
 import { MessageBox } from "./components/MessageBox";
-import { Site } from "./components/Site";
+import { Site } from "./components/Site/Site";
+
+import { initializeIcons } from "@fluentui/react/lib/Icons";
+initializeIcons(/* optional base url */);
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold } };
 const stackTokens: IStackTokens = { childrenGap: 15 };

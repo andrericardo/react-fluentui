@@ -9,6 +9,7 @@ import {
   IStackProps,
   Icon,
 } from "@fluentui/react";
+import { Sidebar } from "./Sidebar";
 
 const sectionStackTokens: IStackTokens = { maxHeight: 100 };
 
@@ -33,20 +34,7 @@ export const Site: React.FunctionComponent = () => {
         },
       }}
     >
-      <Stack
-        disableShrink
-        horizontalAlign="stretch"
-        grow={0}
-        styles={{
-          root: {
-            backgroundColor: "#FFFFFF",
-            borderRight: "1px solid #EDEBE9", // divider
-            minWidth: "229px",
-          },
-        }}
-      >
-        <span>Sidebar</span>
-      </Stack>
+      <Sidebar />
 
       <Stack
         grow={1}
