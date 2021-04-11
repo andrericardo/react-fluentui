@@ -29,7 +29,6 @@ export const Site: React.FunctionComponent = () => {
   return (
     <Stack
       horizontal
-      verticalFill
       styles={{
         root: {
           backgroundColor: "#faf9f8", // light grey for content
@@ -40,7 +39,6 @@ export const Site: React.FunctionComponent = () => {
 
       <Stack
         grow={1}
-        horizontalAlign="stretch"
         styles={{
           root: {
             overflow: "scroll",
