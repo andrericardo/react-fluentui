@@ -12,6 +12,7 @@ import {
   MessageBarType,
 } from "@fluentui/react";
 import { Sidebar } from "./Sidebar";
+import { SiteCommandBar } from "./SiteCommandBar";
 
 const sectionStackTokens: IStackTokens = { maxHeight: 100 };
 
@@ -29,7 +30,6 @@ export const Site: React.FunctionComponent = () => {
     <Stack
       horizontal
       verticalFill
-      gap={10}
       styles={{
         root: {
           backgroundColor: "#faf9f8", // light grey for content
@@ -47,6 +47,7 @@ export const Site: React.FunctionComponent = () => {
           },
         }}
       >
+        <SiteCommandBar />
         <span>Main</span>
       </Stack>
     </Stack>
