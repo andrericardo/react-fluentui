@@ -17,16 +17,16 @@ import { initializeIcons } from "@fluentui/react/lib/Icons";
 initializeIcons(/* optional base url */);
 
 export const App: React.FunctionComponent = () => {
-  const [choice, setChoice] = React.useState<string | undefined>(undefined);
+  const [isMessageShown, setShowMessage] = React.useState<boolean>(false);
 
   const resetChoice = React.useCallback(() => {
     console.log("reset Choice");
-    setChoice(undefined);
+    setShowMessage(false);
   }, []);
 
   React.useEffect(
     () => {
-      let timer1 = setTimeout(() => setChoice("error"), 5000);
+      let timer1 = setTimeout(() => setShowMessage(true), 5000);
 
       // this will clear Timeout
       // when component unmount like in willComponentUnmount
@@ -40,7 +40,7 @@ export const App: React.FunctionComponent = () => {
     // like this - [data]
     // than clearTimeout will run every time
     // this value changes (useEffect re-run)
-    [choice]
+    [isMessageShown]
   );
 
   return (
@@ -53,7 +53,7 @@ export const App: React.FunctionComponent = () => {
       }}
     >
       <Header />
-      {choice === "error" && <MessageBox resetChoice={resetChoice} />}
+      {isMessageShown && <MessageBox resetChoice={resetChoice} />}
       <Site />
     </Stack>
   );

@@ -62,7 +62,7 @@ export const MessageBox: React.FunctionComponent<IExampleProps> = (p) => {
           target="_blank"
           underline
         >
-          Visit our website.
+          Visit Fluent UI website.
         </Link>
       </MessageBar>
     </Stack>

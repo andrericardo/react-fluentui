@@ -1,4 +1,4 @@
-Project to learn Fluent UI.
+# Project to learn Fluent UI and React
 
 Fluent UI Web Controls implementation of the sample [Figma Fluent UI toolkit resource](https://developer.microsoft.com/en-us/fluentui#/resources) provided by Microsoft.
 
@@ -13,10 +13,13 @@ https://www.figma.com/file/7TNP96MpJ3hehby2h1enu4/Microsoft-Fluent-Web?node-id=4
 
 [TODO]
 
-Demo
+## Demo
+
 https://andrericardo.github.io/react-fluentui/
 
-### Considerations
+## Design decisions
 
-Uses the same layout as https://developer.microsoft.com/en-us/fluentui#/controls/web,
-the top header is not always visible once you scroll down.
+- Uses the same layout as https://developer.microsoft.com/en-us/fluentui#/controls/web,
+  the top header is not always visible once you scroll down.
+
+- Every 5 reconds shows a random type of MessageBar

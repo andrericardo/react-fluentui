@@ -84,6 +84,7 @@ export interface IDocument {
   dateModified: string;
   dateCreatedValue: number;
   shared: string;
+  modified: string;
   fileSize: string;
   fileSizeRaw: number;
 }
@@ -207,13 +208,13 @@ export class DetailsListDocumentsExample extends React.Component<
         key: "column6",
         name: "Modified",
         fieldName: "modifiedValue",
-        minWidth: 70,
-        maxWidth: 90,
+        minWidth: 80,
+        maxWidth: 240,
         isResizable: true,
         onColumnClick: this._onColumnClick,
         data: "string",
         onRender: (item: IDocument) => {
-          return <span>{item.shared}</span>;
+          return <span>{item.modified}</span>;
         },
         isPadded: true,
       },
@@ -395,8 +396,12 @@ function _copyAndSort<T>(
 
 function _generateDocuments() {
   const items: IDocument[] = [];
+  var now = new Date();
+
   for (let i = 0; i < 500; i++) {
     const randomDate = _randomDate(new Date(2012, 0, 1), new Date());
+    var differenceInTime = now.getTime() - randomDate.date.getTime();
+    const differenceInDays = Math.trunc(differenceInTime / (1000 * 3600 * 24));
     const randomFileSize = _randomFileSize();
     const randomFileType = _randomFileIcon();
     const randomSharedStatus = _randomSharedStatus();
@@ -416,11 +421,12 @@ function _generateDocuments() {
       iconName: randomFileType.url,
       fileType: randomFileType.docType,
       modifiedBy: userName,
+      shared: randomSharedStatus,
       dateModified: randomDate.dateFormatted,
       dateCreatedValue: randomDate.value,
       fileSize: randomFileSize.value,
       fileSizeRaw: randomFileSize.rawSize,
-      shared: randomSharedStatus,
+      modified: `${differenceInDays} days ago`,
     });
   }
   return items;
@@ -429,13 +435,14 @@ function _generateDocuments() {
 function _randomDate(
   start: Date,
   end: Date
-): { value: number; dateFormatted: string } {
+): { value: number; dateFormatted: string; date: Date } {
   const date: Date = new Date(
     start.getTime() + Math.random() * (end.getTime() - start.getTime())
   );
   return {
     value: date.valueOf(),
     dateFormatted: date.toLocaleDateString(),
+    date: date,
   };
 }
 
