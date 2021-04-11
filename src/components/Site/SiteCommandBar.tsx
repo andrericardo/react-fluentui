@@ -1,13 +1,5 @@
 import * as React from "react";
 import {
-  Stack,
-  IStackTokens,
-  Link,
-  ILinkStyleProps,
-  ILinkStyles,
-  ITheme,
-  IStackProps,
-  Icon,
   IButtonProps,
   CommandBar,
   ICommandBarItemProps,
@@ -54,6 +46,7 @@ const _items: ICommandBarItemProps[] = [
           key: "emailMessage",
           text: "Email message",
           iconProps: { iconName: "Mail" },
+          // eslint-disable-next-line no-useless-computed-key
           ["data-automation-id"]: "newEmailButton", // optional
         },
         {

@@ -11,10 +11,10 @@ import {
   Label,
 } from "@fluentui/react";
 import { DetailsListDocumentsExample } from "./DetailsListDocumentsExample";
-import { ScrollablePaneDetailsListExample } from "./ScrollablePaneDetailsListExample";
 
 const numericalSpacingStackTokens: IStackTokens = {
   childrenGap: 10,
+  // Set some padding vertically and horizontally
   padding: "l1 l2", // https://github.com/microsoft/fluentui/blob/dab45a2afe609709735b9b6e604a1af40d50e809/packages/react/src/components/Stack/StackUtils.test.ts#L103-L104
 };
 
@@ -80,7 +80,6 @@ export const PageContent: React.FunctionComponent = () => {
               }}
             >
               <DetailsListDocumentsExample />
-              {/* <ScrollablePaneDetailsListExample /> */}
             </PivotItem>
             <PivotItem headerText="Tab">
               <Label styles={labelStyles}>Pivot #2</Label>

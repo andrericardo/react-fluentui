@@ -1,13 +1,6 @@
 import * as React from "react";
 import {
   Stack,
-  IStackTokens,
-  Link,
-  ILinkStyleProps,
-  ILinkStyles,
-  ITheme,
-  IStackProps,
-  Icon,
   Nav,
   INavLink,
   INavStyles,

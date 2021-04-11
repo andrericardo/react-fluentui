@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Stack,
-  Text,
-  Link,
-  FontWeights,
-  IStackTokens,
-  Icon,
-} from "@fluentui/react";
-import logo from "./logo.svg";
+import { Stack } from "@fluentui/react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { MessageBox } from "./components/MessageBox";

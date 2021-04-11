@@ -13,9 +13,9 @@ import {
   IDetailsHeaderProps,
   IDetailsColumnRenderTooltipProps,
   ConstrainMode,
+  mergeStyleSets,
+  TooltipHost,
 } from "@fluentui/react";
-import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
-import { TooltipHost } from "office-ui-fabric-react/lib/Tooltip";
 
 const classNames = mergeStyleSets({
   fileIconHeaderIcon: {
@@ -58,12 +58,6 @@ const classNames = mergeStyleSets({
     backgroundColor: "white",
   },
 });
-const controlStyles = {
-  root: {
-    margin: "0 30px 20px 0",
-    maxWidth: "300px",
-  },
-};
 
 export interface IDetailsListDocumentsExampleState {
   columns: IColumn[];
