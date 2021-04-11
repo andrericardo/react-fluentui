@@ -10,6 +10,7 @@ import {
   ILabelStyles,
   Label,
 } from "@fluentui/react";
+import { DetailsListDocumentsExample } from "./DetailsListDocumentsExample";
 
 const numericalSpacingStackTokens: IStackTokens = {
   childrenGap: 10,
@@ -70,6 +71,7 @@ export const PageContent: React.FunctionComponent = () => {
               }}
             >
               <Label styles={labelStyles}>DetailsList Pivot #1</Label>
+              <DetailsListDocumentsExample />
             </PivotItem>
             <PivotItem headerText="Tab">
               <Label styles={labelStyles}>Pivot #2</Label>
