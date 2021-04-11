@@ -7,6 +7,12 @@ import {
   IColumn,
   ScrollablePane,
   ScrollbarVisibility,
+  Sticky,
+  StickyPositionType,
+  IRenderFunction,
+  IDetailsHeaderProps,
+  IDetailsColumnRenderTooltipProps,
+  ConstrainMode,
 } from "@fluentui/react";
 import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
 import { TooltipHost } from "office-ui-fabric-react/lib/Tooltip";
@@ -81,6 +87,26 @@ export interface IDocument {
   fileSize: string;
   fileSizeRaw: number;
 }
+
+const onRenderDetailsHeader: IRenderFunction<IDetailsHeaderProps> = (
+  props,
+  defaultRender
+) => {
+  if (!props) {
+    return null;
+  }
+  const onRenderColumnHeaderTooltip: IRenderFunction<IDetailsColumnRenderTooltipProps> = (
+    tooltipHostProps
+  ) => <TooltipHost {...tooltipHostProps} />;
+  return (
+    <Sticky stickyPosition={StickyPositionType.Header} isScrollSynced>
+      {defaultRender!({
+        ...props,
+        onRenderColumnHeaderTooltip,
+      })}
+    </Sticky>
+  );
+};
 
 export class DetailsListDocumentsExample extends React.Component<
   {},
@@ -244,21 +270,24 @@ export class DetailsListDocumentsExample extends React.Component<
     const { columns, isCompactMode, items } = this.state;
 
     return (
-      <div className={classNames.wrapper}>
-        <ScrollablePane scrollbarVisibility={ScrollbarVisibility.auto}>
-          <DetailsList
-            items={items}
-            compact={isCompactMode}
-            columns={columns}
-            selectionMode={SelectionMode.none}
-            getKey={this._getKey}
-            setKey="none"
-            layoutMode={DetailsListLayoutMode.justified}
-            isHeaderVisible={true}
-            onItemInvoked={this._onItemInvoked}
-          />
-        </ScrollablePane>
-      </div>
+      <ScrollablePane
+        scrollbarVisibility={ScrollbarVisibility.always}
+        className={classNames.wrapper}
+      >
+        <DetailsList
+          items={items}
+          compact={isCompactMode}
+          columns={columns}
+          selectionMode={SelectionMode.none}
+          getKey={this._getKey}
+          setKey="none"
+          layoutMode={DetailsListLayoutMode.justified}
+          isHeaderVisible={true}
+          onItemInvoked={this._onItemInvoked}
+          constrainMode={ConstrainMode.unconstrained}
+          onRenderDetailsHeader={onRenderDetailsHeader}
+        />
+      </ScrollablePane>
     );
   }
 

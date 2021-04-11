@@ -11,6 +11,7 @@ import {
   Label,
 } from "@fluentui/react";
 import { DetailsListDocumentsExample } from "./DetailsListDocumentsExample";
+import { ScrollablePaneDetailsListExample } from "./ScrollablePaneDetailsListExample";
 
 const numericalSpacingStackTokens: IStackTokens = {
   childrenGap: 10,
@@ -79,6 +80,7 @@ export const PageContent: React.FunctionComponent = () => {
               }}
             >
               <DetailsListDocumentsExample />
+              {/* <ScrollablePaneDetailsListExample /> */}
             </PivotItem>
             <PivotItem headerText="Tab">
               <Label styles={labelStyles}>Pivot #2</Label>
