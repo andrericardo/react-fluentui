@@ -42,7 +42,6 @@ export const Site: React.FunctionComponent = () => {
         grow={1}
         styles={{
           root: {
-            overflow: "scroll",
             backgroundColor: "purple", // light grey for content
           },
         }}

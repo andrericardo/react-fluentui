@@ -49,7 +49,7 @@ export const PageContent: React.FunctionComponent = () => {
       tokens={numericalSpacingStackTokens}
       styles={{
         root: {
-          backgroundColor: "LightPink", // header blue
+          backgroundColor: "LightPink", // header blue,
         },
       }}
     >
@@ -62,7 +62,15 @@ export const PageContent: React.FunctionComponent = () => {
           />
         </Stack.Item>
         <Stack.Item>
-          <Pivot aria-label="Basic Pivot Example">
+          <Pivot
+            aria-label="Basic Pivot Example"
+            styles={{
+              root: {
+                backgroundColor: "LightBlue", // header blue
+                marginBottom: 16,
+              },
+            }}
+          >
             <PivotItem
               headerText="Tab"
               headerButtonProps={{
@@ -70,7 +78,9 @@ export const PageContent: React.FunctionComponent = () => {
                 "data-title": "Tab Title",
               }}
             >
-              <DetailsListDocumentsExample />
+              <Stack data-is-scrollable={true}>
+                <DetailsListDocumentsExample />
+              </Stack>
             </PivotItem>
             <PivotItem headerText="Tab">
               <Label styles={labelStyles}>Pivot #2</Label>

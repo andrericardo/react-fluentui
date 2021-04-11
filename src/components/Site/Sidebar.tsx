@@ -131,6 +131,7 @@ export const Sidebar: React.FunctionComponent = () => {
           backgroundColor: "#FFFFFF",
           borderRight: "1px solid #EDEBE9", // divider
           minWidth: "229px",
+          overflow: "visible",
         },
       }}
     >

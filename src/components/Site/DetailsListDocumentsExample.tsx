@@ -75,6 +75,7 @@ export interface IDocument {
   modifiedBy: string;
   dateModified: string;
   dateCreatedValue: number;
+  shared: string;
   fileSize: string;
   fileSizeRaw: number;
 }
@@ -119,8 +120,8 @@ export class DetailsListDocumentsExample extends React.Component<
         key: "column2",
         name: "Name",
         fieldName: "name",
-        minWidth: 210,
-        maxWidth: 350,
+        minWidth: 300,
+        maxWidth: 500,
         isRowHeader: true,
         isResizable: true,
         isSorted: true,
@@ -162,6 +163,34 @@ export class DetailsListDocumentsExample extends React.Component<
       },
       {
         key: "column5",
+        name: "Shared",
+        fieldName: "sharedValue",
+        minWidth: 70,
+        maxWidth: 90,
+        isResizable: true,
+        onColumnClick: this._onColumnClick,
+        data: "string",
+        onRender: (item: IDocument) => {
+          return <span>{item.shared}</span>;
+        },
+        isPadded: true,
+      },
+      {
+        key: "column6",
+        name: "Modified",
+        fieldName: "modifiedValue",
+        minWidth: 70,
+        maxWidth: 90,
+        isResizable: true,
+        onColumnClick: this._onColumnClick,
+        data: "string",
+        onRender: (item: IDocument) => {
+          return <span>{item.shared}</span>;
+        },
+        isPadded: true,
+      },
+      {
+        key: "column7",
         name: "File Size",
         fieldName: "fileSizeRaw",
         minWidth: 70,
@@ -173,6 +202,21 @@ export class DetailsListDocumentsExample extends React.Component<
         onRender: (item: IDocument) => {
           return <span>{item.fileSize}</span>;
         },
+      },
+      {
+        key: "column8",
+        name: "Owner",
+        fieldName: "owner",
+        minWidth: 70,
+        maxWidth: 90,
+        isResizable: true,
+        isCollapsible: true,
+        data: "string",
+        onColumnClick: this._onColumnClick,
+        onRender: (item: IDocument) => {
+          return <span>{"Tim Deboar"}</span>;
+        },
+        isPadded: true,
       },
     ];
 
@@ -205,72 +249,17 @@ export class DetailsListDocumentsExample extends React.Component<
     } = this.state;
 
     return (
-      <Fabric>
-        <div className={classNames.controlWrapper}>
-          <Toggle
-            label="Enable compact mode"
-            checked={isCompactMode}
-            onChange={this._onChangeCompactMode}
-            onText="Compact"
-            offText="Normal"
-            styles={controlStyles}
-          />
-          <Toggle
-            label="Enable modal selection"
-            checked={isModalSelection}
-            onChange={this._onChangeModalSelection}
-            onText="Modal"
-            offText="Normal"
-            styles={controlStyles}
-          />
-          <TextField
-            label="Filter by name:"
-            onChange={this._onChangeText}
-            styles={controlStyles}
-          />
-          <Announced
-            message={`Number of items after filter applied: ${items.length}.`}
-          />
-        </div>
-        <div className={classNames.selectionDetails}>{selectionDetails}</div>
-        <Announced message={selectionDetails} />
-        {announcedMessage ? (
-          <Announced message={announcedMessage} />
-        ) : undefined}
-        {isModalSelection ? (
-          <MarqueeSelection selection={this._selection}>
-            <DetailsList
-              items={items}
-              compact={isCompactMode}
-              columns={columns}
-              selectionMode={SelectionMode.multiple}
-              getKey={this._getKey}
-              setKey="multiple"
-              layoutMode={DetailsListLayoutMode.justified}
-              isHeaderVisible={true}
-              selection={this._selection}
-              selectionPreservedOnEmptyClick={true}
-              onItemInvoked={this._onItemInvoked}
-              enterModalSelectionOnTouch={true}
-              ariaLabelForSelectionColumn="Toggle selection"
-              ariaLabelForSelectAllCheckbox="Toggle selection for all items"
-              checkButtonAriaLabel="select row"
-            />
-          </MarqueeSelection>
-        ) : (
-          <DetailsList
-            items={items}
-            compact={isCompactMode}
-            columns={columns}
-            selectionMode={SelectionMode.none}
-            getKey={this._getKey}
-            setKey="none"
-            layoutMode={DetailsListLayoutMode.justified}
-            isHeaderVisible={true}
-            onItemInvoked={this._onItemInvoked}
-          />
-        )}
-      </Fabric>
+      <DetailsList
+        items={items}
+        compact={isCompactMode}
+        columns={columns}
+        selectionMode={SelectionMode.none}
+        getKey={this._getKey}
+        setKey="none"
+        layoutMode={DetailsListLayoutMode.justified}
+        isHeaderVisible={true}
+        onItemInvoked={this._onItemInvoked}
+      />
     );
   }
 
@@ -389,6 +378,7 @@ function _generateDocuments() {
     const randomDate = _randomDate(new Date(2012, 0, 1), new Date());
     const randomFileSize = _randomFileSize();
     const randomFileType = _randomFileIcon();
+    const randomSharedStatus = _randomSharedStatus();
     let fileName = _lorem(2);
     fileName =
       fileName.charAt(0).toUpperCase() +
@@ -409,6 +399,7 @@ function _generateDocuments() {
       dateCreatedValue: randomDate.value,
       fileSize: randomFileSize.value,
       fileSizeRaw: randomFileSize.rawSize,
+      shared: randomSharedStatus,
     });
   }
   return items;
@@ -459,6 +450,12 @@ const FILE_ICONS: { name: string }[] = [
   { name: "xsn" },
 ];
 
+const SHARED_STATUS: { name: string }[] = [
+  { name: "Private" },
+  { name: "Shared" },
+  { name: "Public" },
+];
+
 function _randomFileIcon(): { docType: string; url: string } {
   const docType: string =
     FILE_ICONS[Math.floor(Math.random() * FILE_ICONS.length)].name;
@@ -474,6 +471,12 @@ function _randomFileSize(): { value: string; rawSize: number } {
     value: `${fileSize} KB`,
     rawSize: fileSize,
   };
+}
+
+function _randomSharedStatus(): string {
+  const status: string =
+    SHARED_STATUS[Math.floor(Math.random() * SHARED_STATUS.length)].name;
+  return status;
 }
 
 const LOREM_IPSUM = (
