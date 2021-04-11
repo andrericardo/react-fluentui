@@ -79,7 +79,7 @@ export const PageContent: React.FunctionComponent = () => {
               }}
             >
               <Stack data-is-scrollable={true}>
-                <DetailsListDocumentsExample />
+                {/* <DetailsListDocumentsExample /> */}
               </Stack>
             </PivotItem>
             <PivotItem headerText="Tab">

@@ -3,11 +3,8 @@ import {
   Stack,
   IStackTokens,
   Link,
-  ILinkStyleProps,
-  ILinkStyles,
   ITheme,
   IStackProps,
-  Icon,
   MessageBar,
   MessageBarType,
 } from "@fluentui/react";
@@ -27,7 +24,22 @@ interface IExampleProps {
   resetChoice?: () => void;
 }
 
+function randomEnum<T>(anEnum: T): T[keyof T] {
+  const enumValues = (Object.keys(anEnum)
+    .map((n) => Number.parseInt(n))
+    .filter((n) => !Number.isNaN(n)) as unknown) as T[keyof T][];
+  const randomIndex = Math.floor(Math.random() * enumValues.length);
+  const randomEnumValue = enumValues[randomIndex];
+  return randomEnumValue;
+}
+
+function _randomMessageBarType(): MessageBarType {
+  const randomMessageBarEnum = randomEnum(MessageBarType);
+  return randomMessageBarEnum;
+}
+
 export const MessageBox: React.FunctionComponent<IExampleProps> = (p) => {
+  const randomMessageBarEnum = _randomMessageBarType();
   return (
     <Stack
       disableShrink
@@ -39,12 +51,12 @@ export const MessageBox: React.FunctionComponent<IExampleProps> = (p) => {
       }}
     >
       <MessageBar
-        messageBarType={MessageBarType.error}
+        messageBarType={randomMessageBarEnum}
         isMultiline={false}
         onDismiss={p.resetChoice}
         dismissButtonAriaLabel="Close"
       >
-        Info/Default MessageBar.
+        {MessageBarType[randomMessageBarEnum]} MessageBar.
         <Link
           href="https://developer.microsoft.com/en-us/fluentui#/controls/web/messagebar"
           target="_blank"
