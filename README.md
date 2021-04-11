@@ -7,11 +7,7 @@ https://www.figma.com/file/7TNP96MpJ3hehby2h1enu4/Microsoft-Fluent-Web?node-id=4
 
 ## How it looks in Figma
 
-[TODO]
-
-## How it looks in Firefox
-
-[TODO]
+[[images/figma-example-4.png]]
 
 ## Demo
 

@@ -82,7 +82,15 @@ export const Header: React.FunctionComponent = () => {
           },
         }}
       >
-        <Stack horizontal tokens={{ childrenGap: 10 }}>
+        <Stack
+          horizontal
+          tokens={{ childrenGap: 10 }}
+          styles={{
+            root: {
+              paddingRight: 10,
+            },
+          }}
+        >
           <TooltipHost
             content="Emoji"
             // This id is used on the tooltip itself, not the host
