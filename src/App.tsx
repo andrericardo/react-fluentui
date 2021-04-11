@@ -16,11 +16,7 @@ import { Site } from "./components/Site/Site";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 initializeIcons(/* optional base url */);
 
-const boldStyle = { root: { fontWeight: FontWeights.semibold } };
-const stackTokens: IStackTokens = { childrenGap: 15 };
-
 export const App: React.FunctionComponent = () => {
-  const [show, setShow] = React.useState(false);
   const [choice, setChoice] = React.useState<string | undefined>(undefined);
 
   const resetChoice = React.useCallback(() => {

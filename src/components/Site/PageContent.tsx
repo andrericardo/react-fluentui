@@ -78,9 +78,7 @@ export const PageContent: React.FunctionComponent = () => {
                 "data-title": "Tab Title",
               }}
             >
-              <Stack data-is-scrollable={true}>
-                {/* <DetailsListDocumentsExample /> */}
-              </Stack>
+              <DetailsListDocumentsExample />
             </PivotItem>
             <PivotItem headerText="Tab">
               <Label styles={labelStyles}>Pivot #2</Label>

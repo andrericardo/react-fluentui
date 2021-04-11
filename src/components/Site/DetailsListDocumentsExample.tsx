@@ -1,16 +1,13 @@
 import * as React from "react";
-import { TextField } from "office-ui-fabric-react/lib/TextField";
-import { Toggle } from "office-ui-fabric-react/lib/Toggle";
-import { Fabric } from "office-ui-fabric-react/lib/Fabric";
-import { Announced } from "office-ui-fabric-react/lib/Announced";
 import {
   DetailsList,
   DetailsListLayoutMode,
   Selection,
   SelectionMode,
   IColumn,
-} from "office-ui-fabric-react/lib/DetailsList";
-import { MarqueeSelection } from "office-ui-fabric-react/lib/MarqueeSelection";
+  ScrollablePane,
+  ScrollbarVisibility,
+} from "@fluentui/react";
 import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
 import { TooltipHost } from "office-ui-fabric-react/lib/Tooltip";
 
@@ -48,6 +45,11 @@ const classNames = mergeStyleSets({
   },
   selectionDetails: {
     marginBottom: "20px",
+  },
+  wrapper: {
+    height: "80vh",
+    position: "relative",
+    backgroundColor: "white",
   },
 });
 const controlStyles = {
@@ -153,7 +155,7 @@ export class DetailsListDocumentsExample extends React.Component<
         minWidth: 70,
         maxWidth: 90,
         isResizable: true,
-        isCollapsible: true,
+        isCollapsible: false,
         data: "string",
         onColumnClick: this._onColumnClick,
         onRender: (item: IDocument) => {
@@ -196,7 +198,7 @@ export class DetailsListDocumentsExample extends React.Component<
         minWidth: 70,
         maxWidth: 90,
         isResizable: true,
-        isCollapsible: true,
+        isCollapsible: false,
         data: "number",
         onColumnClick: this._onColumnClick,
         onRender: (item: IDocument) => {
@@ -210,7 +212,7 @@ export class DetailsListDocumentsExample extends React.Component<
         minWidth: 70,
         maxWidth: 90,
         isResizable: true,
-        isCollapsible: true,
+        isCollapsible: false,
         data: "string",
         onColumnClick: this._onColumnClick,
         onRender: (item: IDocument) => {
@@ -229,7 +231,7 @@ export class DetailsListDocumentsExample extends React.Component<
     });
 
     this.state = {
-      items: this._allItems,
+      items: this._allItems, //[], //
       columns: columns,
       selectionDetails: this._getSelectionDetails(),
       isModalSelection: false,
@@ -239,27 +241,24 @@ export class DetailsListDocumentsExample extends React.Component<
   }
 
   public render() {
-    const {
-      columns,
-      isCompactMode,
-      items,
-      selectionDetails,
-      isModalSelection,
-      announcedMessage,
-    } = this.state;
+    const { columns, isCompactMode, items } = this.state;
 
     return (
-      <DetailsList
-        items={items}
-        compact={isCompactMode}
-        columns={columns}
-        selectionMode={SelectionMode.none}
-        getKey={this._getKey}
-        setKey="none"
-        layoutMode={DetailsListLayoutMode.justified}
-        isHeaderVisible={true}
-        onItemInvoked={this._onItemInvoked}
-      />
+      <div className={classNames.wrapper}>
+        <ScrollablePane scrollbarVisibility={ScrollbarVisibility.auto}>
+          <DetailsList
+            items={items}
+            compact={isCompactMode}
+            columns={columns}
+            selectionMode={SelectionMode.none}
+            getKey={this._getKey}
+            setKey="none"
+            layoutMode={DetailsListLayoutMode.justified}
+            isHeaderVisible={true}
+            onItemInvoked={this._onItemInvoked}
+          />
+        </ScrollablePane>
+      </div>
     );
   }
 
@@ -278,13 +277,6 @@ export class DetailsListDocumentsExample extends React.Component<
   private _getKey(item: any, index?: number): string {
     return item.key;
   }
-
-  private _onChangeCompactMode = (
-    ev: React.MouseEvent<HTMLElement>,
-    checked: boolean | undefined
-  ): void => {
-    this.setState({ isCompactMode: checked });
-  };
 
   private _onChangeModalSelection = (
     ev: React.MouseEvent<HTMLElement>,
