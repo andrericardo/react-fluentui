@@ -70,7 +70,6 @@ export const PageContent: React.FunctionComponent = () => {
                 "data-title": "Tab Title",
               }}
             >
-              <Label styles={labelStyles}>DetailsList Pivot #1</Label>
               <DetailsListDocumentsExample />
             </PivotItem>
             <PivotItem headerText="Tab">

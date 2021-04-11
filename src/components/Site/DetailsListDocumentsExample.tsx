@@ -74,7 +74,7 @@ export interface IDocument {
   fileType: string;
   modifiedBy: string;
   dateModified: string;
-  dateModifiedValue: number;
+  dateCreatedValue: number;
   fileSize: string;
   fileSizeRaw: number;
 }
@@ -133,8 +133,8 @@ export class DetailsListDocumentsExample extends React.Component<
       },
       {
         key: "column3",
-        name: "Date Modified",
-        fieldName: "dateModifiedValue",
+        name: "Date Created",
+        fieldName: "dateCreatedValue",
         minWidth: 70,
         maxWidth: 90,
         isResizable: true,
@@ -406,7 +406,7 @@ function _generateDocuments() {
       fileType: randomFileType.docType,
       modifiedBy: userName,
       dateModified: randomDate.dateFormatted,
-      dateModifiedValue: randomDate.value,
+      dateCreatedValue: randomDate.value,
       fileSize: randomFileSize.value,
       fileSizeRaw: randomFileSize.rawSize,
     });
