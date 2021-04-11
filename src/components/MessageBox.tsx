@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   Stack,
+  IStackTokens,
   Link,
   ILinkStyleProps,
   ILinkStyles,
@@ -8,6 +9,8 @@ import {
   IStackProps,
   Icon,
 } from "@fluentui/react";
+
+const sectionStackTokens: IStackTokens = { maxHeight: 100 };
 
 const headerStackStyles = (p: IStackProps, theme: ITheme) => ({
   root: {
@@ -18,6 +21,18 @@ const headerStackStyles = (p: IStackProps, theme: ITheme) => ({
   },
 });
 
-export const Content: React.FunctionComponent = () => {
-  return <p></p>;
+export const MessageBox: React.FunctionComponent = () => {
+  return (
+    <Stack
+      disableShrink
+      styles={{
+        root: {
+          height: "35px",
+          backgroundColor: "rgb(243, 242, 241)",
+        },
+      }}
+    >
+      <span>MessageBox</span>
+    </Stack>
+  );
 };

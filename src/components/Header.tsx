@@ -24,14 +24,16 @@ const headerStackStyles = (p: IStackProps, theme: ITheme) => ({
 export const Header: React.FunctionComponent = () => {
   return (
     <Stack
-      horizontal
-      verticalAlign="center"
-      grow={1}
-      styles={headerStackStyles}
-      tokens={sectionStackTokens}
+      disableShrink
+      styles={{
+        root: {
+          backgroundColor: "#0078D4", // header blue
+          height: "49px",
+          maxHeight: "49px",
+        },
+      }}
     >
-      <Icon></Icon>
-      <Link>Product name</Link>
+      <span>Header</span>
     </Stack>
   );
 };
