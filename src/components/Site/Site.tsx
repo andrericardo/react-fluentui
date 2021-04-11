@@ -13,6 +13,7 @@ import {
 } from "@fluentui/react";
 import { Sidebar } from "./Sidebar";
 import { SiteCommandBar } from "./SiteCommandBar";
+import { PageContent } from "./PageContent";
 
 const sectionStackTokens: IStackTokens = { maxHeight: 100 };
 
@@ -42,11 +43,12 @@ export const Site: React.FunctionComponent = () => {
         styles={{
           root: {
             overflow: "scroll",
+            backgroundColor: "purple", // light grey for content
           },
         }}
       >
         <SiteCommandBar />
-        <span>Main</span>
+        <PageContent />
       </Stack>
     </Stack>
   );
