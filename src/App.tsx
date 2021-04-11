@@ -1,7 +1,15 @@
-import React from 'react';
-import { Stack, Text, Link, FontWeights, IStackTokens } from '@fluentui/react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Stack,
+  Text,
+  Link,
+  FontWeights,
+  IStackTokens,
+  Icon,
+} from "@fluentui/react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Header } from "./components/Header";
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold } };
 const stackTokens: IStackTokens = { childrenGap: 15 };
@@ -9,40 +17,75 @@ const stackTokens: IStackTokens = { childrenGap: 15 };
 export const App: React.FunctionComponent = () => {
   return (
     <Stack
-      horizontalAlign="center"
-      verticalAlign="center"
       verticalFill
       styles={{
         root: {
-          width: '960px',
-          margin: '0 auto',
-          textAlign: 'center',
-          color: '#605e5c',
+          backgroundColor: "LightCoral",
         },
       }}
-      tokens={stackTokens}
     >
-      <img className="App-logo" src={logo} alt="logo" />
-      <Text variant="xxLarge" styles={boldStyle}>
-        Welcome to Your Fluent UI App
-      </Text>
-      <Text variant="large">For a guide on how to customize this project, check out the Fluent UI documentation.</Text>
-      <Text variant="large" styles={boldStyle}>
-        Essential Links
-      </Text>
-      <Stack horizontal tokens={stackTokens} horizontalAlign="center">
-        <Link href="https://developer.microsoft.com/en-us/fluentui#/get-started/web">Docs</Link>
-        <Link href="https://stackoverflow.com/questions/tagged/office-ui-fabric">Stack Overflow</Link>
-        <Link href="https://github.com/microsoft/fluentui/">Github</Link>
-        <Link href="https://twitter.com/fluentui">Twitter</Link>
+      <Stack
+        disableShrink
+        styles={{
+          root: {
+            backgroundColor: "Khaki",
+            height: "49px",
+            maxHeight: "49px",
+          },
+        }}
+      >
+        <span>Header</span>
       </Stack>
-      <Text variant="large" styles={boldStyle}>
-        Design System
-      </Text>
-      <Stack horizontal tokens={stackTokens} horizontalAlign="center">
-        <Link href="https://developer.microsoft.com/en-us/fluentui#/styles/web/icons">Icons</Link>
-        <Link href="https://developer.microsoft.com/en-us/fluentui#/styles/web">Styles</Link>
-        <Link href="https://aka.ms/themedesigner">Theme Designer</Link>
+      <Stack
+        disableShrink
+        styles={{
+          root: {
+            height: "35px",
+            backgroundColor: "DodgerBlue",
+          },
+        }}
+      >
+        <span>MessageBox</span>
+      </Stack>
+
+      <Stack
+        horizontal
+        verticalFill
+        gap={10}
+        styles={{
+          root: {
+            backgroundColor: "Purple",
+          },
+        }}
+      >
+        <Stack
+          disableShrink
+          horizontalAlign="stretch"
+          grow={0}
+          styles={{
+            root: {
+              backgroundColor: "#a6a6a6",
+              borderRight: "2px solid #eeeeee",
+              paddingRight: "1rem",
+              minWidth: "324px",
+            },
+          }}
+        >
+          <span>Sidebar</span>
+        </Stack>
+
+        <Stack
+          grow={1}
+          horizontalAlign="stretch"
+          styles={{
+            root: {
+              overflow: "scroll",
+              backgroundColor: "cyan",
+            },
+          }}
+        >
+          <span>Main</span>
+        </Stack>
       </Stack>
     </Stack>
   );
