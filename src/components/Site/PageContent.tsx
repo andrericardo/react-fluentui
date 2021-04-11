@@ -50,7 +50,7 @@ export const PageContent: React.FunctionComponent = () => {
       tokens={numericalSpacingStackTokens}
       styles={{
         root: {
-          backgroundColor: "LightPink", // header blue,
+          // backgroundColor: "LightPink", // header blue,
         },
       }}
     >
@@ -67,7 +67,7 @@ export const PageContent: React.FunctionComponent = () => {
             aria-label="Basic Pivot Example"
             styles={{
               root: {
-                backgroundColor: "LightBlue", // header blue
+                //  backgroundColor: "LightBlue",
                 marginBottom: 16,
               },
             }}

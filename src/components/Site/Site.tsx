@@ -14,7 +14,7 @@ export const Site: React.FunctionComponent = () => {
       horizontal
       styles={{
         root: {
-          backgroundColor: "#faf9f8", // light grey for content
+          // backgroundColor: "#faf9f8", // light grey for content
         },
       }}
     >
@@ -24,7 +24,7 @@ export const Site: React.FunctionComponent = () => {
         grow={1}
         styles={{
           root: {
-            backgroundColor: "purple", // light grey for content
+            // backgroundColor: "purple", // light grey for content
           },
         }}
       >

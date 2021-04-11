@@ -40,7 +40,7 @@ export const App: React.FunctionComponent = () => {
       verticalFill
       styles={{
         root: {
-          backgroundColor: "LightCoral",
+          // backgroundColor: "LightCoral",
         },
       }}
     >
