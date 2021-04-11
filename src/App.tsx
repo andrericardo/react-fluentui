@@ -20,6 +20,33 @@ const boldStyle = { root: { fontWeight: FontWeights.semibold } };
 const stackTokens: IStackTokens = { childrenGap: 15 };
 
 export const App: React.FunctionComponent = () => {
+  const [show, setShow] = React.useState(false);
+  const [choice, setChoice] = React.useState<string | undefined>(undefined);
+
+  const resetChoice = React.useCallback(() => {
+    console.log("reset Choice");
+    setChoice(undefined);
+  }, []);
+
+  React.useEffect(
+    () => {
+      let timer1 = setTimeout(() => setChoice("error"), 5000);
+
+      // this will clear Timeout
+      // when component unmount like in willComponentUnmount
+      // and show will not change to true
+      return () => {
+        clearTimeout(timer1);
+      };
+    },
+    // useEffect will run only one time with empty []
+    // if you pass a value to array,
+    // like this - [data]
+    // than clearTimeout will run every time
+    // this value changes (useEffect re-run)
+    [choice]
+  );
+
   return (
     <Stack
       verticalFill
@@ -30,7 +57,7 @@ export const App: React.FunctionComponent = () => {
       }}
     >
       <Header />
-      <MessageBox />
+      {choice === "error" && <MessageBox resetChoice={resetChoice} />}
       <Site />
     </Stack>
   );

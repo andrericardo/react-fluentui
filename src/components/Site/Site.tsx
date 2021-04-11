@@ -8,6 +8,8 @@ import {
   ITheme,
   IStackProps,
   Icon,
+  MessageBar,
+  MessageBarType,
 } from "@fluentui/react";
 import { Sidebar } from "./Sidebar";
 

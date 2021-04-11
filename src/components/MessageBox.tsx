@@ -8,6 +8,8 @@ import {
   ITheme,
   IStackProps,
   Icon,
+  MessageBar,
+  MessageBarType,
 } from "@fluentui/react";
 
 const sectionStackTokens: IStackTokens = { maxHeight: 100 };
@@ -21,7 +23,11 @@ const headerStackStyles = (p: IStackProps, theme: ITheme) => ({
   },
 });
 
-export const MessageBox: React.FunctionComponent = () => {
+interface IExampleProps {
+  resetChoice?: () => void;
+}
+
+export const MessageBox: React.FunctionComponent<IExampleProps> = (p) => {
   return (
     <Stack
       disableShrink
@@ -32,7 +38,21 @@ export const MessageBox: React.FunctionComponent = () => {
         },
       }}
     >
-      <span>MessageBox</span>
+      <MessageBar
+        messageBarType={MessageBarType.error}
+        isMultiline={false}
+        onDismiss={p.resetChoice}
+        dismissButtonAriaLabel="Close"
+      >
+        Info/Default MessageBar.
+        <Link
+          href="https://developer.microsoft.com/en-us/fluentui#/controls/web/messagebar"
+          target="_blank"
+          underline
+        >
+          Visit our website.
+        </Link>
+      </MessageBar>
     </Stack>
   );
 };
