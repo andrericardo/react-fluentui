@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-fluentui/static/css/main.26f9e6b0.chunk.css",
-    "main.js": "/react-fluentui/static/js/main.b6f0dda9.chunk.js",
-    "main.js.map": "/react-fluentui/static/js/main.b6f0dda9.chunk.js.map",
+    "main.js": "/react-fluentui/static/js/main.7b5620fa.chunk.js",
+    "main.js.map": "/react-fluentui/static/js/main.7b5620fa.chunk.js.map",
     "runtime-main.js": "/react-fluentui/static/js/runtime-main.32de3a80.js",
     "runtime-main.js.map": "/react-fluentui/static/js/runtime-main.32de3a80.js.map",
     "static/js/2.5cbd709a.chunk.js": "/react-fluentui/static/js/2.5cbd709a.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.32de3a80.js",
     "static/js/2.5cbd709a.chunk.js",
     "static/css/main.26f9e6b0.chunk.css",
-    "static/js/main.b6f0dda9.chunk.js"
+    "static/js/main.7b5620fa.chunk.js"
   ]
 }
