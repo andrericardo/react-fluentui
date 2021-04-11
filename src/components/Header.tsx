@@ -1,70 +1,29 @@
 import * as React from "react";
 import {
-  CommandBar,
-  ICommandBarItemProps,
   Image,
   Link,
   SearchBox,
   Stack,
   Text,
   IconButton,
-  IIconProps,
   TooltipHost,
+  IPersonaSharedProps,
+  Persona,
+  PersonaPresence,
+  PersonaSize,
 } from "@fluentui/react";
-
 import framelogo from "../Framelogo.svg";
+import personaImage from "../img/048persona-image.png";
 
-const _items: ICommandBarItemProps[] = [
-  {
-    key: "info1",
-    text: "Product name",
-    // This needs an ariaLabel since it's icon-only
-    ariaLabel: "Info",
-    href: "/",
-    onClick: () => console.log("Info1"),
-  },
-];
+const examplePersona: IPersonaSharedProps = {
+  imageUrl: personaImage,
+  imageInitials: "AL",
+  text: "Annie Lindqvist",
+  secondaryText: "Software Engineer",
+  tertiaryText: "In a meeting",
+  optionalText: "Available at 4:00pm",
+};
 
-const _farItems: ICommandBarItemProps[] = [
-  {
-    key: "info1",
-    text: "Info",
-    // This needs an ariaLabel since it's icon-only
-    ariaLabel: "Info",
-    iconOnly: true,
-    iconProps: { iconName: "CircleRing" },
-    onClick: () => console.log("Info1"),
-  },
-  {
-    key: "info1",
-    text: "Info",
-    // This needs an ariaLabel since it's icon-only
-    ariaLabel: "Info",
-    iconOnly: true,
-    iconProps: { iconName: "CircleRing" },
-    onClick: () => console.log("Info1"),
-  },
-  {
-    key: "info3",
-    text: "Info",
-    // This needs an ariaLabel since it's icon-only
-    ariaLabel: "Info",
-    iconOnly: true,
-    iconProps: { iconName: "CircleRing" },
-    onClick: () => console.log("Info1"),
-  },
-  {
-    key: "info4",
-    text: "Info",
-    // This needs an ariaLabel since it's icon-only
-    ariaLabel: "Info",
-    iconOnly: true,
-    iconProps: { iconName: "CircleRing" },
-    onClick: () => console.log("Info1"),
-  },
-];
-
-const emojiIcon: IIconProps = { iconName: "Emoji2" };
 const calloutProps = { gapSpace: 0 };
 
 export const Header: React.FunctionComponent = () => {
@@ -123,17 +82,31 @@ export const Header: React.FunctionComponent = () => {
           },
         }}
       >
-        <TooltipHost
-          content="Emoji"
-          // This id is used on the tooltip itself, not the host
-          // (so an element with this id only exists when the tooltip is shown)
-          id={"tooltip1"}
-          calloutProps={calloutProps}
-        >
+        <Stack horizontal tokens={{ childrenGap: 10 }}>
+          <TooltipHost
+            content="Emoji"
+            // This id is used on the tooltip itself, not the host
+            // (so an element with this id only exists when the tooltip is shown)
+            id={"tooltip1"}
+            calloutProps={calloutProps}
+          >
+            <IconButton
+              iconProps={{ iconName: "Ringer" }}
+              title="Button ringer"
+              ariaLabel="Button ringer"
+              disabled={false}
+              checked={false}
+              styles={{
+                root: {
+                  color: "white",
+                },
+              }}
+            />
+          </TooltipHost>
           <IconButton
-            iconProps={{ iconName: "Ringer" }}
-            title="Button ringer"
-            ariaLabel="Button ringer"
+            iconProps={{ iconName: "Settings" }}
+            title="Button settings"
+            ariaLabel="Button settings"
             disabled={false}
             checked={false}
             styles={{
@@ -142,32 +115,26 @@ export const Header: React.FunctionComponent = () => {
               },
             }}
           />
-        </TooltipHost>
-        <IconButton
-          iconProps={{ iconName: "Settings" }}
-          title="Button settings"
-          ariaLabel="Button settings"
-          disabled={false}
-          checked={false}
-          styles={{
-            root: {
-              color: "white",
-            },
-          }}
-        />
-        <IconButton
-          iconProps={{ iconName: "Help" }}
-          title="Button help"
-          ariaLabel="Button help"
-          disabled={false}
-          checked={false}
-          styles={{
-            root: {
-              color: "white",
-            },
-          }}
-        />
-        {/* <CommandBar
+          <IconButton
+            iconProps={{ iconName: "Help" }}
+            title="Button help"
+            ariaLabel="Button help"
+            disabled={false}
+            checked={false}
+            styles={{
+              root: {
+                color: "white",
+              },
+            }}
+          />
+          <Persona
+            {...examplePersona}
+            size={PersonaSize.size32}
+            hidePersonaDetails={true}
+            presence={PersonaPresence.online}
+            imageAlt="Annie Lindqvist, status is busy"
+          />
+          {/* <CommandBar
           // hacky but I could not apply justifyContent flex-end to the items
           items={[]}
           farItems={_farItems}
@@ -178,6 +145,7 @@ export const Header: React.FunctionComponent = () => {
             },
           }}
         /> */}
+        </Stack>
       </Stack.Item>
     </Stack>
   );
