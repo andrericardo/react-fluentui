@@ -1,10 +1,14 @@
 import * as React from "react";
-import { Stack, IStackTokens, ITheme, IStackProps } from "@fluentui/react";
+import { Stack, ScreenWidthMinUhfMobile } from "@fluentui/react";
 import { Sidebar } from "./Sidebar";
 import { SiteCommandBar } from "./SiteCommandBar";
 import { PageContent } from "./PageContent";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 export const Site: React.FunctionComponent = () => {
+  const size = useWindowSize();
+  const isSmallScreen = size.width && size.width < ScreenWidthMinUhfMobile;
+
   return (
     <Stack
       horizontal
@@ -14,7 +18,7 @@ export const Site: React.FunctionComponent = () => {
         },
       }}
     >
-      <Sidebar />
+      {!isSmallScreen && <Sidebar />}
 
       <Stack
         grow={1}
