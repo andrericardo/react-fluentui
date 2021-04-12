@@ -43,19 +43,15 @@ export const Header: React.FunctionComponent = () => {
       }}
     >
       <Stack.Item grow={3}>
-        <Link href="/">
+        <Link href="https://github.com/andrericardo/react-fluentui">
           <Stack horizontal wrap={false} verticalAlign="center">
-            <Image
-              // src="http://placehold.it/48x48.png"
-              src={framelogo}
-              alt="product logo"
-            />
+            <Image src={framelogo} alt="product logo" />
             <Text
               key="productName"
               variant={"large"}
               styles={{
                 root: {
-                  color: "white", // header blue
+                  color: "white",
                 },
               }}
               nowrap
