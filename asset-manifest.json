@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/react-fluentui/static/css/main.26f9e6b0.chunk.css",
-    "main.js": "/react-fluentui/static/js/main.e510de8a.chunk.js",
-    "main.js.map": "/react-fluentui/static/js/main.e510de8a.chunk.js.map",
-    "runtime-main.js": "/react-fluentui/static/js/runtime-main.e540c177.js",
-    "runtime-main.js.map": "/react-fluentui/static/js/runtime-main.e540c177.js.map",
-    "static/js/2.dae38afb.chunk.js": "/react-fluentui/static/js/2.dae38afb.chunk.js",
-    "static/js/2.dae38afb.chunk.js.map": "/react-fluentui/static/js/2.dae38afb.chunk.js.map",
-    "static/js/3.5d414042.chunk.js": "/react-fluentui/static/js/3.5d414042.chunk.js",
-    "static/js/3.5d414042.chunk.js.map": "/react-fluentui/static/js/3.5d414042.chunk.js.map",
+    "main.css": "/react-fluentui/static/css/main.518ce94c.chunk.css",
+    "main.js": "/react-fluentui/static/js/main.441a2fcd.chunk.js",
+    "main.js.map": "/react-fluentui/static/js/main.441a2fcd.chunk.js.map",
+    "runtime-main.js": "/react-fluentui/static/js/runtime-main.c02442d0.js",
+    "runtime-main.js.map": "/react-fluentui/static/js/runtime-main.c02442d0.js.map",
+    "static/js/2.12d2900f.chunk.js": "/react-fluentui/static/js/2.12d2900f.chunk.js",
+    "static/js/2.12d2900f.chunk.js.map": "/react-fluentui/static/js/2.12d2900f.chunk.js.map",
+    "static/js/3.75876f96.chunk.js": "/react-fluentui/static/js/3.75876f96.chunk.js",
+    "static/js/3.75876f96.chunk.js.map": "/react-fluentui/static/js/3.75876f96.chunk.js.map",
     "index.html": "/react-fluentui/index.html",
-    "static/css/main.26f9e6b0.chunk.css.map": "/react-fluentui/static/css/main.26f9e6b0.chunk.css.map",
-    "static/js/2.dae38afb.chunk.js.LICENSE.txt": "/react-fluentui/static/js/2.dae38afb.chunk.js.LICENSE.txt",
+    "static/css/main.518ce94c.chunk.css.map": "/react-fluentui/static/css/main.518ce94c.chunk.css.map",
+    "static/js/2.12d2900f.chunk.js.LICENSE.txt": "/react-fluentui/static/js/2.12d2900f.chunk.js.LICENSE.txt",
     "static/media/Framelogo.ab636c84.svg": "/react-fluentui/static/media/Framelogo.ab636c84.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e540c177.js",
-    "static/js/2.dae38afb.chunk.js",
-    "static/css/main.26f9e6b0.chunk.css",
-    "static/js/main.e510de8a.chunk.js"
+    "static/js/runtime-main.c02442d0.js",
+    "static/js/2.12d2900f.chunk.js",
+    "static/css/main.518ce94c.chunk.css",
+    "static/js/main.441a2fcd.chunk.js"
   ]
 }
