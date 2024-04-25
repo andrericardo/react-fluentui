@@ -39,7 +39,8 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "postcss": ">=8.4.31"
   },
   "volta": {
     "node": "16.20.2"
