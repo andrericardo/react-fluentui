@@ -22,3 +22,21 @@ Original source:
   the top header is not always visible once you scroll down.
 
 - Every 5 reconds shows a random type of MessageBar
+
+## Build
+
+```sh
+npm install
+
+
+```
+
+## Deploy
+
+This repo uses `gh-pages` NPM package to publish to the branch named `gh-pages`.
+
+```sh
+npm run deploy
+git checkout gh-pages
+git push
+```
