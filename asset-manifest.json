@@ -1,23 +1,16 @@
 {
   "files": {
-    "main.css": "/react-fluentui/static/css/main.518ce94c.chunk.css",
-    "main.js": "/react-fluentui/static/js/main.975a8002.chunk.js",
-    "main.js.map": "/react-fluentui/static/js/main.975a8002.chunk.js.map",
-    "runtime-main.js": "/react-fluentui/static/js/runtime-main.6e794d59.js",
-    "runtime-main.js.map": "/react-fluentui/static/js/runtime-main.6e794d59.js.map",
-    "static/js/2.46a8db8c.chunk.js": "/react-fluentui/static/js/2.46a8db8c.chunk.js",
-    "static/js/2.46a8db8c.chunk.js.map": "/react-fluentui/static/js/2.46a8db8c.chunk.js.map",
-    "static/js/3.422746dd.chunk.js": "/react-fluentui/static/js/3.422746dd.chunk.js",
-    "static/js/3.422746dd.chunk.js.map": "/react-fluentui/static/js/3.422746dd.chunk.js.map",
+    "main.css": "/react-fluentui/static/css/main.dc4d6ff2.css",
+    "main.js": "/react-fluentui/static/js/main.16953e38.js",
+    "static/js/453.a57cf107.chunk.js": "/react-fluentui/static/js/453.a57cf107.chunk.js",
+    "static/media/Framelogo.svg": "/react-fluentui/static/media/Framelogo.ab636c844570342f6dce26c39e479c19.svg",
     "index.html": "/react-fluentui/index.html",
-    "static/css/main.518ce94c.chunk.css.map": "/react-fluentui/static/css/main.518ce94c.chunk.css.map",
-    "static/js/2.46a8db8c.chunk.js.LICENSE.txt": "/react-fluentui/static/js/2.46a8db8c.chunk.js.LICENSE.txt",
-    "static/media/Framelogo.ab636c84.svg": "/react-fluentui/static/media/Framelogo.ab636c84.svg"
+    "main.dc4d6ff2.css.map": "/react-fluentui/static/css/main.dc4d6ff2.css.map",
+    "main.16953e38.js.map": "/react-fluentui/static/js/main.16953e38.js.map",
+    "453.a57cf107.chunk.js.map": "/react-fluentui/static/js/453.a57cf107.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.6e794d59.js",
-    "static/js/2.46a8db8c.chunk.js",
-    "static/css/main.518ce94c.chunk.css",
-    "static/js/main.975a8002.chunk.js"
+    "static/css/main.dc4d6ff2.css",
+    "static/js/main.16953e38.js"
   ]
 }
