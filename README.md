@@ -37,6 +37,4 @@ This repo uses `gh-pages` NPM package to publish to the branch named `gh-pages`.
 
 ```sh
 npm run deploy
-git checkout gh-pages
-git push
 ```
