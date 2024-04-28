@@ -43,4 +43,6 @@ npm run deploy
 ## TODO
 
 - [x] Migrate Create React App to Vite https://www.robinwieruch.de/vite-create-react-app/
+- [ ] Add back tests https://www.robinwieruch.de/vitest-react-testing-library/
+- [ ] Deploy using GitHub Actions https://vitejs.dev/guide/static-deploy.html#github-pages
 - [ ] Try out PNPM
