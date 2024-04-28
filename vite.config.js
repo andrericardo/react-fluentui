@@ -7,6 +7,11 @@ export default defineConfig(() => {
       outDir: 'build',
     },
     plugins: [react()],
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './tests/setup.ts',
+    },
     base: '/react-fluentui/'
   };
 });
