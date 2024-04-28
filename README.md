@@ -38,3 +38,9 @@ This repo uses `gh-pages` NPM package to publish to the branch named `gh-pages`.
 ```sh
 npm run deploy
 ```
+
+
+## TODO
+
+- [ ] Migrate Create React App to Vite https://www.robinwieruch.de/vite-create-react-app/
+- [ ] Try out PNPM
