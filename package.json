@@ -1,6 +1,6 @@
 {
   "name": "react-fluentui",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "http://andrericardo.github.io/react-fluentui",
   "private": true,
   "dependencies": {
@@ -10,10 +10,9 @@
     "web-vitals": "^3.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
+    "test": "vitest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -38,9 +37,10 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
     "gh-pages": "^6.1.1",
     "postcss": "^8.4.38",
-    "react-scripts": "5.0.1"
+    "vite": "^5.2.10"
   },
   "volta": {
     "node": "20.12.2"
