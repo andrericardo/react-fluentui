@@ -42,5 +42,5 @@ npm run deploy
 
 ## TODO
 
-- [ ] Migrate Create React App to Vite https://www.robinwieruch.de/vite-create-react-app/
+- [x] Migrate Create React App to Vite https://www.robinwieruch.de/vite-create-react-app/
 - [ ] Try out PNPM
