@@ -1,6 +1,6 @@
 {
   "name": "react-fluentui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "http://andrericardo.github.io/react-fluentui",
   "private": true,
   "dependencies": {
@@ -43,6 +43,6 @@
     "postcss": ">=8.4.31"
   },
   "volta": {
-    "node": "18.20.2"
+    "node": "20.12.2"
   }
 }
