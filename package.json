@@ -1,8 +1,9 @@
 {
   "name": "react-fluentui",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "homepage": "http://andrericardo.github.io/react-fluentui",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@fluentui/react": "8.117.7",
     "typescript": "^5.4.5",
