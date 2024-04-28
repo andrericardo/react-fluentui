@@ -1,11 +1,10 @@
 {
   "name": "react-fluentui",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "homepage": "http://andrericardo.github.io/react-fluentui",
   "private": true,
   "dependencies": {
     "@fluentui/react": "8.117.7",
-    "react-app-polyfill": "^3.0.0",
     "typescript": "^4.1.2",
     "web-vitals": "^3.5.2"
   },
