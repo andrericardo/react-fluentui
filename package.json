@@ -13,6 +13,7 @@
     "start": "vite",
     "build": "vite build",
     "test": "vitest",
+    "preview": "vite preview --port 8080",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
