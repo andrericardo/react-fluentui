@@ -265,10 +265,6 @@ export class DetailsListDocumentsExample extends React.Component<
     const { columns, isCompactMode, items } = this.state;
 
     return (
-      <ScrollablePane
-        scrollbarVisibility={ScrollbarVisibility.always}
-        className={classNames.wrapper}
-      >
         <DetailsList
           items={items}
           compact={isCompactMode}
@@ -282,7 +278,6 @@ export class DetailsListDocumentsExample extends React.Component<
           constrainMode={ConstrainMode.unconstrained}
           onRenderDetailsHeader={onRenderDetailsHeader}
         />
-      </ScrollablePane>
     );
   }
 
